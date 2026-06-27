@@ -584,13 +584,14 @@ export default function AdminPage() {
           selectedKeys={[activeTab]}
           onClick={(e) => setActiveTab(e.key)}
           style={{ borderRight: 0, marginTop: 12 }}
-        >
-          <Menu.Item key="lessons" icon={<PlayCircleOutlined />}>Bài học</Menu.Item>
-          <Menu.Item key="comments" icon={<CommentOutlined />}>Bình luận</Menu.Item>
-          <Menu.Item key="stories" icon={<InstagramOutlined />}>Stories</Menu.Item>
-          <Menu.Item key="flashcards" icon={<BookOutlined />}>Bộ thẻ từ vựng</Menu.Item>
-          <Menu.Item key="exams" icon={<FileTextOutlined />}>Đề thi & Câu hỏi</Menu.Item>
-        </Menu>
+          items={[
+            { key: "lessons", icon: <PlayCircleOutlined />, label: "Bài học" },
+            { key: "comments", icon: <CommentOutlined />, label: "Bình luận" },
+            { key: "stories", icon: <InstagramOutlined />, label: "Stories" },
+            { key: "flashcards", icon: <BookOutlined />, label: "Bộ thẻ từ vựng" },
+            { key: "exams", icon: <FileTextOutlined />, label: "Đề thi & Câu hỏi" },
+          ]}
+        />
       </Sider>
 
       {/* Main Content Area */}
