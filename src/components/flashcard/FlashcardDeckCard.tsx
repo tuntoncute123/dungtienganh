@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Button, Tooltip, message } from "antd";
+import { Button, Tooltip, App } from "antd";
 import { LockOutlined, BookOutlined } from "@ant-design/icons";
 
 export interface FlashcardDeck {
@@ -30,6 +30,7 @@ const categoryConfig = {
 };
 
 export default function FlashcardDeckCard({ deck, onStudy }: FlashcardDeckCardProps) {
+  const { message } = App.useApp();
   const config = categoryConfig[deck.category] || categoryConfig.vocabulary;
 
   const handleActionClick = (actionName: string) => {

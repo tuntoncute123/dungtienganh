@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import { ConfigProvider } from "antd";
+import { ConfigProvider, App } from "antd";
 import "./globals.css";
 
 const inter = Inter({
@@ -46,7 +46,9 @@ export default function RootLayout({
               },
             }}
           >
-            {children}
+            <App>
+              {children}
+            </App>
           </ConfigProvider>
         </AntdRegistry>
       </body>

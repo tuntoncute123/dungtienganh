@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Modal, message, Tooltip } from "antd";
+import { Modal, App, Tooltip } from "antd";
 import {
   ArrowLeftOutlined,
   CheckOutlined,
@@ -304,6 +304,7 @@ const CORRECT_ANSWERS: Record<number, string | string[]> = {
 };
 
 export default function ProgressTest() {
+  const { message } = App.useApp();
   const router = useRouter();
   const [currentPart, setCurrentPart] = useState<5 | 6 | 7>(5);
   const [answers, setAnswers] = useState<Record<number, string>>({});

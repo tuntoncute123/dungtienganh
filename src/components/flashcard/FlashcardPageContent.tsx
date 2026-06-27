@@ -11,7 +11,7 @@ import {
   Select, 
   InputNumber, 
   Button, 
-  message,
+  App,
   Empty,
   Space
 } from "antd";
@@ -196,6 +196,7 @@ const initialDecks: FlashcardDeck[] = [
 ];
 
 export default function FlashcardPageContent() {
+  const { message } = App.useApp();
   const [decks, setDecks] = useState<FlashcardDeck[]>(initialDecks);
   const [sourceType, setSourceType] = useState<"system" | "custom">("system");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);

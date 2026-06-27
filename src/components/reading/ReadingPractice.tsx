@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Select, Modal, Input, message, Segmented } from "antd";
+import { Select, Modal, Input, App, Segmented } from "antd";
 import { ClockCircleOutlined, BookOutlined, QuestionCircleOutlined, ArrowLeftOutlined, SettingOutlined } from "@ant-design/icons";
 import styles from "./reading.module.css";
 import Link from "next/link";
@@ -29,6 +29,7 @@ interface Answers24To26 {
 }
 
 export default function ReadingPractice() {
+  const { message } = App.useApp();
   // States for answers
   const [answers14To18, setAnswers14To18] = useState<Answers14To18>({});
   const [answers19To23, setAnswers19To23] = useState<Answers19To23>({});
