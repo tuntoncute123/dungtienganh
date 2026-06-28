@@ -28,7 +28,6 @@ services:
       - '3001:3001'
     volumes:
       - shared_logs:/app/logs
-    command: sh -c "mkdir -p /app/logs && echo '=== STARTUP ===' > /app/logs/startup.log && sleep 10 2>&1 | tee -a /app/logs/startup.log && echo '--- running migrations ---' 2>&1 | tee -a /app/logs/startup.log && npx prisma migrate deploy 2>&1 | tee -a /app/logs/startup.log && echo '--- starting nestjs ---' 2>&1 | tee -a /app/logs/startup.log && node dist/main 2>&1 | tee -a /app/logs/startup.log"
     depends_on:
       - db
     restart: always

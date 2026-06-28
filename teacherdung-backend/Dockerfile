@@ -13,5 +13,7 @@ COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/prisma ./prisma
+COPY startup.sh ./
+RUN chmod +x startup.sh
 EXPOSE 3001
-CMD ["sh", "-c", "sleep 10 && npx prisma migrate deploy && node dist/main"]
+CMD ["./startup.sh"]
