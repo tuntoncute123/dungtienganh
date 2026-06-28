@@ -6,7 +6,7 @@ services:
     container_name: teacherdung-postgres-db
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: J9YtBkXrO39lOnY3Qpu5cPIt0s5MhRE3uDimqhDIFQo5ojktK7bTDdEcvVEdGZGS
       POSTGRES_DB: teacherdung
     ports:
       - '5433:5432'
@@ -20,13 +20,12 @@ services:
       dockerfile: Dockerfile
     container_name: teacherdung-nestjs-backend
     environment:
-      DATABASE_URL: postgresql://postgres:postgres@db:5432/teacherdung?schema=public
-      # Add Cloudflare R2 configurations here if needed
-      CLOUDFLARE_R2_ACCESS_KEY_ID: ""
-      CLOUDFLARE_R2_SECRET_ACCESS_KEY: ""
-      CLOUDFLARE_R2_BUCKET_NAME: ""
-      CLOUDFLARE_R2_ENDPOINT: ""
-      CLOUDFLARE_R2_PUBLIC_URL: ""
+      DATABASE_URL: postgresql://postgres:J9YtBkXrO39lOnY3Qpu5cPIt0s5MhRE3uDimqhDIFQo5ojktK7bTDdEcvVEdGZGS@db:5432/teacherdung?schema=public
+      CLOUDFLARE_R2_ACCESS_KEY_ID: ${CLOUDFLARE_R2_ACCESS_KEY_ID}
+      CLOUDFLARE_R2_SECRET_ACCESS_KEY: ${CLOUDFLARE_R2_SECRET_ACCESS_KEY}
+      CLOUDFLARE_R2_BUCKET_NAME: ${CLOUDFLARE_R2_BUCKET_NAME}
+      CLOUDFLARE_R2_ENDPOINT: ${CLOUDFLARE_R2_ENDPOINT}
+      CLOUDFLARE_R2_PUBLIC_URL: ${CLOUDFLARE_R2_PUBLIC_URL}
     ports:
       - '3001:3001'
     depends_on:
