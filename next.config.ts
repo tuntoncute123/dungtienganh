@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  optimizeFonts: false,
   poweredByHeader: false,
   async headers() {
     return [
